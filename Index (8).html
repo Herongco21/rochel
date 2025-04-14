@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Responsive Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin:20px;
+      Line-height: 1.6;
+    }
+    h2{
+      color:#333;
+      margin-top:2em;
+    }
+    /* Flexbox Layout */
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap:10px;
+      margin-bottom: 2em;
+    }
+    .flex-item{
+      flex: 11 calc(33% - 10px);
+      background-color: #ddd;
+      padding:20px;
+      text-align: center;
+      border-radius: 5px;
+    } 
+    /* Grid Layout */
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .grid-item{
+      background-color: #f4f4f4;
+      padding:20px;
+      text-align: center;
+      border-radius: 5px;
+    }
+  /* Responsible Media Queries*/
+  /* Table Breakpoint*l
+  @media (max-width:768px) {
+    .grid{
+      grid-template-column: repeat (2,1fr);
+    }
+    .flex item{
+      flex: 11 calc(50% -10px);
+    }
+  }
+  /*Mobile Breakpoint*/
+   @media (max-width:480px){
+     .grid{
+       grid-template-columns: 1fr;
+     }
+     
+     .flex-item {
+       flex: 1 1 100%;
+     }
+     }
+     /* Additional Styling */
+     .demo-section{
+       margin-bottom: 3em;
+       padding: 20px;
+       background-color: #f9f9f9;
+       border-radius:  8px;
+     }
+     . description {
+       color: #666;
+       margin-bottom: 1em;
+     }
+     </style>
+    </head>
+   <body>
+     <h1> Responsive Layout Example<h1>
+       
+   <!--flexbox Example -->
+   <div class+"demo-section">
+     <h2>Responsive Flexbox Layout</h2>
+     <p class="description"> This layout uses Flexbox and adjusts form 3 columns to 2 columns on tablet and 1 column
+     <div class="flex-container">
+     <div class="flex-item">Flex Item 1</div>
+     <div class="flex-item">Flex item 2</div>
+     <div class="flex-item">Flex Item 3</div>
+     </div>
+    </div/
+    
+    <!--Grid Example -->
+    <div class="demo-dections">
+      <h2>Responsive Grid Layout</h2>
+      <p class="description"> This CSS Grid and changes from 4 columns to 2 columns on tablet and 1 column 
+      <div class="grid">
+        <div class="grid-item">Grid Item 1</div>
+        <div class="grid-item">Grid Item 2</div>
+        <div class="grid-item">Grid Item 3</div>
+        <div class="grid-item">Grid Item 4</div>
+        <div class="grid-item">Grid Item 5</div>
+        <div class="grid-item">Grid Item 6</div>
+        </div>
+      </div>
+    </body>
+  </html>

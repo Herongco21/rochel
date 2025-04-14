@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Hands-on Activity</title>
+</head>
+<body>
+    <h1 id="mainHeading">Javascript Activity</h1>
+    
+    <h2 id="SquareCalc">Square Calculator</h2>
+    <p>Enter a number and see its square:</p>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="calculateSquare()">Calculate Square</button>
+    <p id="result"></p>
+    
+    <h2 id="from1toNum">Numbers from 1 to user input</h2>
+    <button onclick="displayNumbers()">Show Numbers</button>
+    <ul id="numberList"></ul>
+    
+    <h2 id="updateHeading1">Update Heading</h2>
+    <button onclick="updateText()">Change Heading</button>
+
+    <script>
+        function calculateSquare() {
+            const number = document.getElementById("numberInput").value;
+            if(number === "") {
+                document.getElementById("result").textContent = "Please enter a number";
+                return;
+            }
+            const square = number * number;
+            document.getElementById("result").textContent = `The square is: ${square}`;
+        }
+
+        function displayNumbers() {
+            const number = document.getElementById("numberInput").value;
+            const list = document.getElementById("numberList");
+            list.innerHTML = "";
+            
+            if(number === "" || number < 1) {
+                const listItem = document.createElement("li");
+                listItem.textContent = "Please enter a valid number greater than 0";
+                list.appendChild(listItem);
+                return;
+            }
+            
+            for(let i = 1; i <= number; i++) {
+                const listItem = document.createElement("li");
+                listItem.textContent = i;
+                list.appendChild(listItem);
+            }
+            document.getElementById("from1toNum").textContent = `Number from 1 to ${number}`;
+        }
+
+        function updateText() {
+            document.getElementById("mainHeading").textContent = "Updated by Herongco!";
+        }
+    </script>
+</body>
+</html>
